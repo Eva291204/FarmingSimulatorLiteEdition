@@ -1,0 +1,7 @@
+Ajout : 
+- Le joueur peut planter 5 graines différentes
+- Les plantes grandissent uniquement lorsque le joueur va dormir
+- Les plantes ont des valeurs différentes, comme leur nombres de jours de pousse et leur prix d'achat / de vente
+- Les plantes fonctionnent avec des scriptableObject
+- Utilisation de l'inputSystem
+- Intégration d'assets et d'animations ?
