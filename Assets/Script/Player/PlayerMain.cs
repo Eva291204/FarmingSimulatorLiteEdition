@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerMain : MonoBehaviour
 {
+    /// <summary>
+    /// stock les script liés au joueur
+    /// </summary>
     private static PlayerMain _playerMainInstance;
+
     public static PlayerMain Instance
     {
         get
@@ -11,9 +15,11 @@ public class PlayerMain : MonoBehaviour
             {
                 Debug.Log("PlayerMain is null");
             }
+
             return _playerMainInstance;
         }
     }
+
     public void Awake()
     {
         if (_playerMainInstance != null)

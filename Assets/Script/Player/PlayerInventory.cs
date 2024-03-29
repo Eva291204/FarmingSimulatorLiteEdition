@@ -1,30 +1,41 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerInventory : MonoBehaviour
 {
-    [SerializeField] public int NumberItemSelect { get; private set; }
     public bool ItemIsSelect;
+    public List<GameObject> Item = new List<GameObject>();
+    public List<int> NumberItem = new List<int>();
 
-    [SerializeField] private List<Sprite> _imageItem = new List<Sprite>();
-    public List<int> _numberItem = new List<int>();
+    public event Action<int, int> UpdateInventoryUIEvent;
+
+    [SerializeField]
+    public int NumberItemSelect { get; private set; }
 
     public void Start()
     {
-        Dictionary<Sprite, int> ItemInventory = new Dictionary<Sprite, int>()
-        {
-            {_imageItem[0], _numberItem[0]},
-            {_imageItem[1], _numberItem[1]},
-            {_imageItem[2], _numberItem[2]},
-            {_imageItem[3], _numberItem[3]},
-            {_imageItem[4], _numberItem[4]},
-        };
+        Shop.Instance.NumberItemInInventoryChangeEvent += ChangeItemNumberInInventory;
     }
 
+    /// <summary>
+    /// Item selectionner dans la barre d'inventaire
+    /// </summary>
+    /// <param name="numberOfThisItem"></param>
     public void ItemSelect(int numberOfThisItem)
     {
         ItemIsSelect = true;
         NumberItemSelect = numberOfThisItem;
+    }
+
+    /// <summary>
+    /// Calcule la nouvelle valeur
+    /// </summary>
+    /// <param name="numberOfThisItem"></param>
+    /// <param name="changeNumber"></param>
+    public void ChangeItemNumberInInventory(int numberOfThisItem, int changeNumber)
+    {
+        NumberItem[numberOfThisItem] = NumberItem[numberOfThisItem] + changeNumber;
+        UpdateInventoryUIEvent?.Invoke(numberOfThisItem, NumberItem[numberOfThisItem]);
     }
 }

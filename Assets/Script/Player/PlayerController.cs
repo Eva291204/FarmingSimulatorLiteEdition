@@ -5,16 +5,25 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour, InputPlayerController.IPlayerActions
 {
     public event Action PlayerIsMovingEvent;
+
     public event Action PlayerIsInteractEvent;
-    public Vector2 _directionPlayer {  get; private set; }
+
+    public event Action<Vector2> PlayerChangeOrientationEvent;
+
+    public Vector2 DirectionPlayer { get; private set; }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        _directionPlayer = context.ReadValue<Vector2>();
+        DirectionPlayer = context.ReadValue<Vector2>();
         PlayerIsMovingEvent?.Invoke();
+        PlayerChangeOrientationEvent?.Invoke(DirectionPlayer);
     }
+
     public void OnInteract(InputAction.CallbackContext context)
     {
-        PlayerIsInteractEvent?.Invoke();
+        if (context.started)
+        {
+            PlayerIsInteractEvent?.Invoke();
+        }
     }
 }

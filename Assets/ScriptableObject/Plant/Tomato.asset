@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ce3a4c299b0074588a128e42b01c49, type: 3}
+  m_Name: Tomato
+  m_EditorClassIdentifier: 
+  _plantName: Tomato
+  _sellPrice: 20
+  _growDuration: 3
+  _numberInInventory: 8
+  PlantEvolution:
+  - {fileID: 160087962, guid: 4d1ccbcf3cad5d94cb849fa5081672fb, type: 3}
+  - {fileID: 1810424231, guid: 4d1ccbcf3cad5d94cb849fa5081672fb, type: 3}
+  - {fileID: -836856158, guid: 4d1ccbcf3cad5d94cb849fa5081672fb, type: 3}
