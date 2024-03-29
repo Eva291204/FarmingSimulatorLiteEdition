@@ -3,34 +3,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SeedData", menuName = "ScriptableObjects/SeedData", order = 1)]
 public class SeedData : ScriptableObject
 {
-    [SerializeField]
-    private string _seedName;
-    [SerializeField]
-    private int _buyPrice;
-    [SerializeField]
-    private int _numberInInventory;
+    [field: SerializeField]
+    public string SeedName { get; private set; }
 
-    public string SeedName
-    {
-        get
-        {
-            return _seedName;
-        }
-    }
+    [field: SerializeField]
+    public int BuyPrice { get; private set; }
 
-    public int BuyPrice
-    {
-        get
-        {
-            return _buyPrice;
-        }
-    }
-
-    public int NumberInInventory
-    {
-        get
-        {
-            return _numberInInventory;
-        }
-    }
+    [field: SerializeField]
+    public int NumberInInventory { get; private set; }
 }

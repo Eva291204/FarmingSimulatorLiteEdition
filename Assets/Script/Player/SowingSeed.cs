@@ -14,7 +14,7 @@ public class SowingSeed : MonoBehaviour
     private int _numberOfDirt;
     private PlayerInventory _playerInventory;
 
-    public event Action<int, int> UpdateInventoryUIEvent;
+    public event Action<int, int> DecreaseSeedInInventoryUIEvent;
 
     public void Start()
     {
@@ -36,7 +36,7 @@ public class SowingSeed : MonoBehaviour
         if (_playerInventory.ItemIsSelect && _playerInventory.NumberItem[_playerInventory.NumberItemSelect] > 0)
         {
             _playerInventory.NumberItem[_playerInventory.NumberItemSelect]--;
-            UpdateInventoryUIEvent?.Invoke(_playerInventory.NumberItemSelect, _playerInventory.NumberItem[_playerInventory.NumberItemSelect]);
+            DecreaseSeedInInventoryUIEvent?.Invoke(_playerInventory.NumberItemSelect, _playerInventory.NumberItem[_playerInventory.NumberItemSelect]);
 
             GameObject newPlant = Instantiate(_playerInventory.Item[_playerInventory.NumberItemSelect]);
             newPlant.transform.position = PlayerMain.Instance.PlayerInteract.InteractObject.transform.position;

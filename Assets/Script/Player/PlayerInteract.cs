@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
@@ -12,6 +13,8 @@ public class PlayerInteract : MonoBehaviour
     private SowingSeed _sowingSeed;
     private Harvest _harvest;
     private Plant _plant;
+
+    public event Action PlayerSleep;
 
     public GameObject InteractObject { get; private set; }
 
@@ -42,6 +45,7 @@ public class PlayerInteract : MonoBehaviour
         else if (InteractObject.CompareTag("Bed"))
         {
             GrowManager.Instance.GrowPlant();
+            PlayerSleep?.Invoke();
         }
         else if (InteractObject.CompareTag("Plant"))
         {

@@ -5,44 +5,16 @@ using UnityEngine;
 public class PlantData : ScriptableObject
 {
     public List<Sprite> PlantEvolution = new List<Sprite>();
-    [SerializeField]
-    private string _plantName;
-    [SerializeField]
-    private int _sellPrice;
-    [SerializeField]
-    private int _growDuration;
-    [SerializeField]
-    private int _numberInInventory;
 
-    public string PlantName
-    {
-        get
-        {
-            return _plantName;
-        }
-    }
+    [field: SerializeField]
+    public string PlantName { get; private set; }
 
-    public int SellPrice
-    {
-        get
-        {
-            return _sellPrice;
-        }
-    }
+    [field: SerializeField]
+    public int SellPrice { get; private set; }
 
-    public int GrowDuration
-    {
-        get
-        {
-            return _growDuration;
-        }
-    }
+    [field: SerializeField]
+    public int GrowDuration { get; private set; }
 
-    public int NumberInInventory
-    {
-        get
-        {
-            return _numberInInventory;
-        }
-    }
+    [field: SerializeField]
+    public int NumberInInventory { get; private set; }
 }

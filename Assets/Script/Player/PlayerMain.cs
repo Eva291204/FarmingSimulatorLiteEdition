@@ -5,6 +5,10 @@ public class PlayerMain : MonoBehaviour
     /// <summary>
     /// stock les script liés au joueur
     /// </summary>
+    public PlayerController PlayerController;
+    public PlayerMove PlayerMove;
+    public PlayerInteract PlayerInteract;
+    public PlayerInventory PlayerInventory;
     private static PlayerMain _playerMainInstance;
 
     public static PlayerMain Instance
@@ -31,9 +35,4 @@ public class PlayerMain : MonoBehaviour
             _playerMainInstance = this;
         }
     }
-
-    public PlayerController PlayerController;
-    public PlayerMove PlayerMove;
-    public PlayerInteract PlayerInteract;
-    public PlayerInventory PlayerInventory;
 }

@@ -4,9 +4,11 @@ using UnityEngine;
 public class GrowManager : MonoBehaviour
 {
     /// <summary>
-    /// fait grandir les plantes d'un chaque nuit passer
+    /// Fait grandir les plantes d'un chaque nuit passer
     /// </summary>
     private static GrowManager _instance;
+    private List<GameObject> _farmingInDirt = new List<GameObject>();
+    private Plant _plant;
 
     public static GrowManager Instance
     {
@@ -32,9 +34,6 @@ public class GrowManager : MonoBehaviour
             _instance = this;
         }
     }
-
-    private List<GameObject> _farmingInDirt = new List<GameObject>();
-    private Plant _plant;
 
     public void AddFarming(GameObject newPlantation)
     {

@@ -6,7 +6,16 @@ public class Shop : MonoBehaviour
     /// <summary>
     /// Achat, vente et argent du joueur
     /// </summary>
+    public int PlayerMoney;
     private static Shop _shopInstance;
+    private Seed _seed;
+    private Plant _plant;
+    [SerializeField]
+    private PlayerInventory _playerInventory;
+
+    public event Action<int> ChangeMoneyUI;
+
+    public event Action<int, int> NumberItemInInventoryChangeEvent;
 
     public static Shop Instance
     {
@@ -33,17 +42,6 @@ public class Shop : MonoBehaviour
         }
     }
 
-    public int PlayerMoney;
-    private Seed _seed;
-    private Plant _plant;
-
-    [SerializeField]
-    private PlayerInventory _playerInventory;
-
-    public event Action<int> ChangeMoneyUI;
-
-    public event Action<int, int> NumberItemInInventoryChangeEvent;
-
     public void Start()
     {
         ChangeMoneyUI?.Invoke(PlayerMoney);
@@ -59,7 +57,7 @@ public class Shop : MonoBehaviour
 
         // pour obtenir les donner de la graine
         _seed.Start();
-        PlayerMoney = PlayerMoney - _seed.BuyPrice;
+        PlayerMoney = PlayerMoney - _seed.SeedData.BuyPrice;
 
         if (PlayerMoney >= 0)
         {
@@ -68,7 +66,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            PlayerMoney = PlayerMoney + _seed.BuyPrice;
+            PlayerMoney = PlayerMoney + _seed.SeedData.BuyPrice;
         }
     }
 
@@ -82,7 +80,7 @@ public class Shop : MonoBehaviour
 
         // pour obtenir les donner de la plante
         _plant.Start();
-        PlayerMoney = PlayerMoney + _plant.SellPrice;
+        PlayerMoney = PlayerMoney + _plant.PlantData.SellPrice;
 
         if (_playerInventory.NumberItem[_plant.NumberInInventory] > 0)
         {
@@ -91,7 +89,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            PlayerMoney = PlayerMoney - _plant.SellPrice;
+            PlayerMoney = PlayerMoney - _plant.PlantData.SellPrice;
         }
     }
 }

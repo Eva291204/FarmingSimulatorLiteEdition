@@ -8,7 +8,7 @@ public class PlayerInventory : MonoBehaviour
     public List<GameObject> Item = new List<GameObject>();
     public List<int> NumberItem = new List<int>();
 
-    public event Action<int, int> UpdateInventoryUIEvent;
+    public event Action<int, int> UpdateNumberItemInInventoryUIEvent;
 
     [SerializeField]
     public int NumberItemSelect { get; private set; }
@@ -36,6 +36,6 @@ public class PlayerInventory : MonoBehaviour
     public void ChangeItemNumberInInventory(int numberOfThisItem, int changeNumber)
     {
         NumberItem[numberOfThisItem] = NumberItem[numberOfThisItem] + changeNumber;
-        UpdateInventoryUIEvent?.Invoke(numberOfThisItem, NumberItem[numberOfThisItem]);
+        UpdateNumberItemInInventoryUIEvent?.Invoke(numberOfThisItem, NumberItem[numberOfThisItem]);
     }
 }

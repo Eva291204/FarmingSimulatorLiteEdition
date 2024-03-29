@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa20818653cb094b8d141e24c063247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _seedData: {fileID: 11400000, guid: 6262e13d51c11ea4697e1359e0648aa0, type: 2}
+  <SeedData>k__BackingField: {fileID: 11400000, guid: 6262e13d51c11ea4697e1359e0648aa0,
+    type: 2}
 --- !u!114 &6236904994380767390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +65,8 @@ MonoBehaviour:
   IsHarvestable: 0
   GrowDuration: 0
   PlantEvolution: []
-  _plantData: {fileID: 11400000, guid: 1f59f7be242fd474abbdf62083fb63b1, type: 2}
+  <PlantData>k__BackingField: {fileID: 11400000, guid: 1f59f7be242fd474abbdf62083fb63b1,
+    type: 2}
 --- !u!212 &4622332755672464247
 SpriteRenderer:
   m_ObjectHideFlags: 0

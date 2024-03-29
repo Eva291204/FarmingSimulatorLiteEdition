@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13a3c3bcaa9b1e4d952a89448fefe1c, type: 3}
   m_Name: TomatoSeed
   m_EditorClassIdentifier: 
-  _seedName: Tomato
-  _buyPrice: 15
-  _numberInInventory: 3
+  <SeedName>k__BackingField: Tomato
+  <BuyPrice>k__BackingField: 15
+  <NumberInInventory>k__BackingField: 3

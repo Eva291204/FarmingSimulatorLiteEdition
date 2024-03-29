@@ -18,9 +18,9 @@ public class InventoryUI : MonoBehaviour
 
     public void Start()
     {
-        _playerInventory.UpdateInventoryUIEvent += UpdateTextUI;
-        _sowingSeed.UpdateInventoryUIEvent += UpdateTextUI;
-        _harvest.UpdateInventoryUIEvent += UpdateTextUI;
+        _playerInventory.UpdateNumberItemInInventoryUIEvent += UpdateTextUI;
+        _sowingSeed.DecreaseSeedInInventoryUIEvent += UpdateTextUI;
+        _harvest.UpdatePlantInInventoryUIEvent += UpdateTextUI;
     }
 
     public void UpdateTextUI(int numberOfThisItem, int changeNumber)

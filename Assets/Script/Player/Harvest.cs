@@ -8,7 +8,7 @@ public class Harvest : MonoBehaviour
     /// </summary>
     [SerializeField]
 
-    public event Action<int, int> UpdateInventoryUIEvent;
+    public event Action<int, int> UpdatePlantInInventoryUIEvent;
 
     public void HarvestPlant(GameObject plantHarvest)
     {
@@ -21,6 +21,6 @@ public class Harvest : MonoBehaviour
         addItem = plantHarvest.GetComponent<Plant>().NumberInInventory;
 
         PlayerMain.Instance.PlayerInventory.NumberItem[addItem]++;
-        UpdateInventoryUIEvent?.Invoke(addItem, PlayerMain.Instance.PlayerInventory.NumberItem[addItem]);
+        UpdatePlantInInventoryUIEvent?.Invoke(addItem, PlayerMain.Instance.PlayerInventory.NumberItem[addItem]);
     }
 }

@@ -8,22 +8,16 @@ public class Plant : MonoBehaviour
     public List<Sprite> PlantEvolution = new List<Sprite>();
     private GameObject _dirt;
 
-    [SerializeField]
-    private PlantData _plantData;
-
-    public string Name { get; protected set; }
-
-    public int SellPrice { get; protected set; }
+    [field: SerializeField]
+    public PlantData PlantData { get; private set; }
 
     public int NumberInInventory { get; protected set; }
 
     public void Start()
     {
-        Name = _plantData.PlantName;
-        SellPrice = _plantData.SellPrice;
-        PlantEvolution = _plantData.PlantEvolution;
-        GrowDuration = _plantData.GrowDuration;
-        NumberInInventory = _plantData.NumberInInventory;
+        PlantEvolution = PlantData.PlantEvolution;
+        GrowDuration = PlantData.GrowDuration;
+        NumberInInventory = PlantData.NumberInInventory;
     }
 
     /// <summary>

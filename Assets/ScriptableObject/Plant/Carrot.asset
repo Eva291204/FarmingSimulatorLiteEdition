@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ce3a4c299b0074588a128e42b01c49, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
-  _plantName: Carrot
-  _sellPrice: 15
-  _growDuration: 2
-  _numberInInventory: 7
   PlantEvolution:
   - {fileID: 2067422015, guid: 4d1ccbcf3cad5d94cb849fa5081672fb, type: 3}
   - {fileID: 190064535, guid: 4d1ccbcf3cad5d94cb849fa5081672fb, type: 3}
+  <PlantName>k__BackingField: Carrot
+  <SellPrice>k__BackingField: 15
+  <GrowDuration>k__BackingField: 2
+  <NumberInInventory>k__BackingField: 7
